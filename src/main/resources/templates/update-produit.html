@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Mise à jour produit</title>
+</head>
+<body>
+
+<form th:action="@{/save-produit}" method="post" th:object="${produit}">
+
+  <div>
+    <input type="hidden" th:field="*{id}" />
+  </div>
+
+  <div>
+    <label  for="produit_des" class="form-label">Désignation:</label>
+    <input id="produit_des" th:field = "*{designation}" name="produit_designation" required type="text">
+  </div>
+  <div>
+    <label  for="produit_description" class="form-label">Description:</label>
+    <textarea id="produit_description" th:field = "*{description}" name="produit_description" ></textarea>
+  </div>
+
+  <button  type="submit" >Save</button>
+
+</form>
+
+</body>
+</html>
